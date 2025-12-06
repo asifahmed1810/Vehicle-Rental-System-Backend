@@ -10,6 +10,12 @@ const createUser=async(payload:Record<string,unknown>)=>{
    return result
 }
 
+const getUser=async()=>{
+    const result =pool.query(`SELECT * FROM users`)
+
+    return result;
+}
+
 
 const updateUser=async(name:string, email:string,password:string,phone:string,id:string)=>{
     
@@ -19,5 +25,6 @@ const updateUser=async(name:string, email:string,password:string,phone:string,id
 
 export const userService={
     createUser,
-    updateUser
+    updateUser,
+    getUser
 }

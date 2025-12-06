@@ -17,6 +17,26 @@ const createUser = async (req: Request, res: Response) => {
   }
 };
 
+const getUser=async(req:Request, res:Response)=>{
+  try {
+    const result =await userService.getUser();
+
+    res.status(200).json({
+        success: true,
+        message: "User Get successfully",
+        data: result.rows,
+      });
+    
+  } catch (err:any) {
+    res.status(500).json({
+      success: false,
+      message: err.message,
+    });
+  }
+}
+
+
+
 const updateUser = async (req: Request, res: Response) => {
     const {name,email,password,phone}=req.body
   try {
@@ -46,5 +66,6 @@ const updateUser = async (req: Request, res: Response) => {
 
 export const userControllers = {
   createUser,
-  updateUser
+  updateUser,
+  getUser
 };
