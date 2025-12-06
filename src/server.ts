@@ -1,12 +1,18 @@
 import express, { Request, Response } from "express"
+import config from "./config";
 
 const app = express()
-const port = 5000
+const port = config.port;
+
+app.use(express.json());
 
 app.get('/', (req:Request, res:Response) => {
   res.send('Vehicle Rental System Backend')
 })
 
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+
