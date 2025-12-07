@@ -6,9 +6,9 @@ const router=Router();
 
 router.post("/signup",userControllers.createUser)
 
-router.get("/users", auth(),userControllers.getUser)
+router.get("/users", auth("admin"),userControllers.getUser)
 
-router.put("/users/:id",userControllers.updateUser)
+router.put("/users/:id",auth("admin", "customer"),userControllers.updateUser)
 
 
 export const userRoutes=router;
