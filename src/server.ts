@@ -16,7 +16,7 @@ initDB();
 
 app.use("/api/v1",userRoutes)
 app.use("/api/v1/auth",authRoutes)
-app.use("/api/v1/vehicle",vehicleRoutes)
+app.use("/api/v1/vehicles",vehicleRoutes)
 app.use("/api/v1/bookings",bookingRoutes)
 
 

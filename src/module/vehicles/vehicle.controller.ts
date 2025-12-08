@@ -7,7 +7,7 @@ const createVehicle = async (req: Request, res: Response) => {
 
     res.status(200).json({
       success: true,
-      message: "Vehicle data created successfully",
+      message: "Vehicle created successfully",
       data: result.rows[0],
     });
   } catch (err: any) {
@@ -25,14 +25,14 @@ const getVehicle = async (req: Request, res: Response) => {
     if (result.rows.length === 0) {
       res.status(404).json({
         success: false,
-        message: "There is no Vehicle data Available",
+        message: "No vehicles found",
       });
     }else{
 
         
     res.status(200).json({
       success: true,
-      message: "Vehicles data get successfully",
+      message: "Vehicles retrieved successfully",
       data: result.rows,
     });
     }
@@ -56,7 +56,7 @@ const singleVehicle = async (req: Request, res: Response) => {
     } else {
       res.status(200).json({
         success: true,
-        message: "Vehicle data retrieved successfully",
+        message: "Vehicle retrieved successfully",
         data: result.rows[0],
       });
     }
@@ -82,7 +82,7 @@ const updateVehicle = async (req: Request, res: Response) => {
     } else {
       res.status(200).json({
         success: true,
-        message: "Vehicle data updated successfully",
+        message: "Vehicle updated successfully",
         data: result.rows[0],
       });
     }

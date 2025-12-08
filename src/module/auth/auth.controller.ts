@@ -29,7 +29,7 @@ const loginUser = async (req: Request, res: Response) => {
     const result = await authServices.loginUser(email, password);
     res.status(200).json({
       success: true,
-      message: "Login successfully",
+      message: "Login successful",
       data: result
     });
   } catch (err: any) {

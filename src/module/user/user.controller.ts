@@ -7,7 +7,7 @@ const getUser=async(req:Request, res:Response)=>{
 
     res.status(200).json({
         success: true,
-        message: "User Get successfully",
+        message: "Users retrieved successfully",
         data: result.rows,
       });
     
@@ -34,7 +34,7 @@ const updateUser = async (req: Request, res: Response) => {
     } else {
       res.status(200).json({
         success: true,
-        message: "User Updated successfully",
+        message: "User updated successfully",
         data: result.rows[0],
       });
     }
