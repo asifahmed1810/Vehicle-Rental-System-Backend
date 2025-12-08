@@ -51,9 +51,3 @@ Built using **Node.js**, **Express**, **TypeScript**, and **PostgreSQL**.
 
 ---
 
-## 🚀 Local Setup & Installation
-
-### **1️⃣ Clone the Repository**
-```sh
-git clone <your-repo-url>
-cd vehicle-rental-system-backend
