@@ -6,7 +6,7 @@ const router=Router();
 
 
 
-router.get("/users", auth("admin"),userControllers.getUser)
+router.get("/users",auth("admin"),userControllers.getUser)
 
 router.put("/users/:id",auth("admin", "customer"),userControllers.updateUser)
 

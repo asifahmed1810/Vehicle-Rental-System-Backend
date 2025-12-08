@@ -4,6 +4,8 @@ import initDB from "./config/db";
 import { userRoutes } from "./module/user/user.routes";
 import { authRoutes } from "./module/auth/auth.routes";
 import { vehicleRoutes } from "./module/vehicles/vehicle.routes";
+import { bookingRoutes } from "./module/bookings/bookings.routes";
+import { autoReturnExpiredBookings } from "./middleware/autoReturnBookings";
 
 const app = express()
 const port = config.port;
@@ -15,6 +17,14 @@ initDB();
 app.use("/api/v1",userRoutes)
 app.use("/api/v1/auth",authRoutes)
 app.use("/api/v1/vehicle",vehicleRoutes)
+app.use("/api/v1/bookings",bookingRoutes)
+
+
+setInterval(() => {
+  autoReturnExpiredBookings();
+  console.log("Auto return job executed");
+}, 1000 * 60 * 5);
+
 
 app.get('/', (req:Request, res:Response) => {
   res.send('Vehicle Rental System Backend')
